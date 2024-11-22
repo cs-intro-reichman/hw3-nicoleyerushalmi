@@ -3,8 +3,6 @@
 // Math.sqrt. All the functions in this class operate on int values and
 // return int values.
 
-import javax.naming.NameNotFoundException;
-
 public class Algebra {
 	public static void main(String args[]) {
 	    // Tests some of the operations
@@ -29,92 +27,86 @@ public class Algebra {
 	public static int plus(int x1, int x2) {
 		// loop too add
 		// number > 0
-		if ((x1 > 0) & (x2 > 0)) {
-			int add = x2;
+		int add = 0;
+		if ((x1 > 0) && (x2 > 0)) {
+			add = x2;
 			for(int i = 0; i < x1; i++)
 				{add ++;}
-			return add;}
+			}
 		
 		// one > 0 and the other < 0
-		if ((x1 > 0) & (x2 < 0)) {
-			int add = x1;
+		if ((x1 > 0) && (x2 < 0)) {
+			add = x1;
 			for(int i = 0; i < x2; i++)
 				{add --;}
-			return add;
 		}
 
 		// one > 0 and the other < 0
-		if ((x1 < 0) & (x2 > 0)) {
-			int add = x2;
+		if ((x1 < 0) && (x2 > 0)) {
+			add = x2;
 			for(int i = 0; i < x1; i++)
 				{add --;}
-			return add;
 		}
 
 		// both < 0
-		if ((x1 < 0) & (x2 < 0)) {
-			int add = x2;
+		if ((x1 < 0) && (x2 < 0)) {
+			add = x2;
 			for(int i = 0; i < x1; i++)
 				{add --;}
-			return add;}
+			}
+			return add;
 		}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		// loop to minus
 		// number > 0
-		if ((x1 > 0) & (x2 > 0)) {
-			int minus1 = x1; 
+		int minus1 = x1;
+		if ((x1 > 0) && (x2 > 0)) {
 			for(int i = 0; i < x2 ;i++){
-				minus1--;}
-			return minus1;
+				minus1--;}	
 		}
 
 		// one > 0 and the other < 0
-		if ((x1 > 0) & (x2 < 0)) {
-			int minus1 = x1;
+		if ((x1 > 0) && (x2 < 0)) {
 			for(int i = x2; i < 0 ;i++){
 				minus1 ++;}
-			return minus1;
 		}
 
 		// one > 0 and the other < 0
-		if ((x1 < 0) & (x2 > 0)) {
-			int minus1 = x1;
+		if ((x1 < 0) && (x2 > 0)) {
 			for(int i = 0; i < x2 ;i++){
 				minus1 --;}
-			return minus1;
 		}
 
 		// both < 0
-		if ((x1 < 0) & (x2 < 0)) {
-			int minus1 = x1;
+		if ((x1 < 0) && (x2 < 0)) {
 			for(int i = x2; i < 0 ;i++){
 				minus1 = minus1 ++;}
-			return minus1;}	
 			}
+		return minus1;	
+		}
+
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		// loop to times
+		int times1 = x2;
 		if ((x1 == 0 || x2 == 0)) {
 			return 0;
 		}
 
-		if ((x1 > 0 & x2 > 0)) {
-			int times1 = x2;
+		if ((x1 > 0 && x2 > 0)) {
 			for(int i = 0; i < x1 - 1; i++){
 			times1 = plus(x2, times1);}
-		return times1;
 		}
 
-		else{int times1 = x2;
+		else{
 			for(int i = 0; i < x1 - 1; i++){
 				times1 = plus(x2, times1);}
-			int minus_time = minus(0, times1);
-			return minus_time;
+			times1 = minus(0, times1);
 		}
-		
+		return times1;
 	}
 
 	// Returns x^n (for n >= 0)
@@ -139,46 +131,49 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		// loop for divers
 		// numbers > 0
-		if (x1 > 0 & x2 > 0) {
+		int much = 0;
+		if (x1 > 0 && x2 > 0) {
 			if (x2 > x1){return 0;}
 			int divers1 = x2;
-			int much = 0;
 			for(int i =0; divers1 < x1 + 1; i++){
 				much ++;
 				divers1 = divers1 + x2;}
-			return much;
+			//return much;
 		}
 
 		// numbers < 0
-		if ((x1 < 0 & x2 < 0)) {
+		if ((x1 < 0 && x2 < 0)) {
 			x1 = times(x1, -1);
 			x2 = times(-1, x2);
 			if (x2 > x1){return 0;}
-			int divers1 = x2;
-			int much = 0;
-			for(int i =0; divers1 < x1 + 1; i++){
+			int divers2 = x2;
+			for(int i =0; divers2 < x1 + 1; i++){
 				much ++;
-				divers1 = divers1 + x2;}
-			return much;}
-
+				divers2 = divers2 + x2;}
+			//return much;}
+			}
 		// if only 1 is > 0
 		if (x1 < 0 || x2 < 0) {
 			x1 = times(x1, -1);
 			x2 = times(-1, x2);
 			if (x2 > x1){return 0;}
-			int divers1 = x2;
-			int much = 0;
-			for(int i =0; divers1 < x1 + 1; i++){
+			int divers3 = x2;
+			for(int i =0; divers3 < x1 + 1; i++){
 				much ++;
-				divers1 = divers1 + x2;}
-				int minus_times = times(much, -1);
-			return minus_times ;}
+				divers3 = divers3 + x2;}
+			much = times(much, -1);
+			//return much;
+		}
+		return much;
+	}
+
 		
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
 		// loop for modolo
-		int new_mod = x1 - (x2*(div(x1, x2)));
+		int devers = times(x2,(div(x1, x2)));
+		int new_mod = minus(x1, devers);
 		return new_mod;
 	}	
 
@@ -187,15 +182,15 @@ public class Algebra {
 		// loop for sqrt
 		if ( x < 0) {
 			System.out.println("minus cant be sqrt");
+			return 0;
 		}
 		else{
 		int new_squrt = 1;
 		for(int i = 0; i < x; i++){
-			if (i *i == x) {
+			if (times(i, i) == x) {
 				new_squrt = i;}
 			}
 			return new_squrt;
-		}
-		
+		}	
 	}	  	  
 }
