@@ -32,6 +32,7 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		// Replace the following statement with your code
 		String new_str = "";
+		String new_str1 ="";
 		boolean bool = true;
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
@@ -40,7 +41,14 @@ public class Anagram {
 			for(int j = 0; j < str2.length(); j++){
 				// go throw str2 for each chr at str1
 				if (str1.charAt(i) == str2.charAt(j)) {
+					for(int k = 0; k < new_str1.length(); k++){
+						char c = str2.charAt(j);
+						if ((new_str.indexOf(c) != -1)) {
+							bool = false;
+						}
+					}
 					new_str = new_str + str1.charAt(i);
+
 					break;
 				} // close if 
 			}// close for j
@@ -58,11 +66,11 @@ public class Anagram {
 		String new_str = "";
 		char lower_char;
 		for(int i = 0; i < str.length(); i++){
-			if (str.charAt(i) >= 97 && str.charAt(i) <= 122) {
+			if ((str.charAt(i) >= 97 && str.charAt(i) <= 122) || str.charAt(i) == 32)  {
 				new_str = new_str + str.charAt(i);
 			}
 			else{
-				if (str.charAt(i) >= 65 && str.charAt(i) <= 90){
+				if ((str.charAt(i) >= 65 && str.charAt(i) <= 90)|| str.charAt(i) == 32){
 					lower_char = (char)(str.charAt(i) + 32);
 					new_str = new_str + lower_char;
 				}
