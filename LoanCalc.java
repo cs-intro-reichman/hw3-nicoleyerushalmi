@@ -51,6 +51,7 @@ public class LoanCalc {
 		iterationCounter = 0;
 		double endB = loan;
 		while (endB >= epsilon) {
+			endB = loan;
 			endB = endBalance(loan, rate, increment, try_payment);
 			try_payment = try_payment + increment;
 			iterationCounter++;
