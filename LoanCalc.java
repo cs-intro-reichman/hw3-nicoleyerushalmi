@@ -45,8 +45,8 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
 	public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		// Replace the following statement with your code
-		double try_payment = 10;
-		double increment = 0.0001;
+		double try_payment = 1;
+		double increment = 0.001;
 		iterationCounter = 0;
 		double endB = loan;
 		while (endB >= epsilon) {
@@ -72,7 +72,6 @@ public class LoanCalc {
 		iterationCounter = 0;
 		while (endB >= epsilon) {
 			iterationCounter++;
-			endB = endBalance(loan, rate, n, try_payment);
 			if (endB < 0) {
 				last_try = try_payment;
 				try_payment = (small_last_try + try_payment) / 2;
@@ -80,6 +79,7 @@ public class LoanCalc {
 				small_last_try = try_payment;
 				try_payment = (try_payment + last_try) / 2;		 
 				}
+				endB = endBalance(loan, rate, n, try_payment);
 		}
 		return try_payment;
 	}
