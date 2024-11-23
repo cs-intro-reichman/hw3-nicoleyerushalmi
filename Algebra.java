@@ -36,15 +36,15 @@ public class Algebra {
 		
 		// one > 0 and the other < 0
 		if ((x1 > 0) && (x2 < 0)) {
-			add = x1;
-			for(int i = 0; i < x2; i++)
+			add = x2;
+			for(int i = 0; i < x1; i++)
 				{add ++;}
 		}
 
 		// one > 0 and the other < 0
 		if ((x1 < 0) && (x2 > 0)) {
-			add = x2;
-			for(int i = 0; i < x1; i++)
+			add = x1;
+			for(int i = 0; i < x2; i++)
 				{add --;}
 		}
 
