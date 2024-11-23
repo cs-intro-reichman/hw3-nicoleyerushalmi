@@ -69,18 +69,21 @@ public class Algebra {
 
 		// one > 0 and the other < 0
 		if ((x1 > 0) && (x2 < 0)) {
+			minus1 = x1;
 			for(int i = x2; i < 0 ;i++){
 				minus1 ++;}
 		}
 
 		// one > 0 and the other < 0
 		if ((x1 < 0) && (x2 > 0)) {
+			minus1 = x1;
 			for(int i = 0; i < x2 ;i++){
 				minus1 --;}
 		}
 
 		// both < 0
 		if ((x1 < 0) && (x2 < 0)) {
+			minus1 = x1;
 			for(int i = x2; i < 0 ;i++){
 				minus1 = minus1 ++;}
 			}
