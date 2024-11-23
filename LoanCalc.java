@@ -68,16 +68,18 @@ public class LoanCalc {
 		double try_payment = (loan + epsilon) / 2;
 		double endB = loan;
 		double last_try = (loan + epsilon) / 2;
+		double small_last_try = epsilon;
 		iterationCounter = 0;
 		while (endB >= epsilon) {
 			iterationCounter++;
 			endB = endBalance(loan, rate, n, try_payment);
 			if (endB < 0) {
 				last_try = try_payment;
-				try_payment = (epsilon + try_payment) / 2;
+				try_payment = (small_last_try + try_payment) / 2;
 			} else {
-				try_payment = (try_payment + last_try) / 2;
-			}
+				small_last_try = try_payment;
+				try_payment = (try_payment + last_try) / 2;		 
+				}
 		}
 		return try_payment;
 	}
