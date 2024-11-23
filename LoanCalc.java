@@ -46,8 +46,7 @@ public class LoanCalc {
 	public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		// Replace the following statement with your code
 		double try_payment = 10;
-		epsilon = 0.01;
-		double increment = 0.001;
+		double increment = 0.0001;
 		iterationCounter = 0;
 		double endB = loan;
 		while (endB >= epsilon) {
@@ -68,8 +67,7 @@ public class LoanCalc {
 		// Replace the following statement with your code
 		double try_payment = (loan + epsilon) / 2;
 		double endB = loan;
-		epsilon = 0.01;
-		double last_try = loan;
+		double last_try = (loan + epsilon) / 2;
 		iterationCounter = 0;
 		while (endB >= epsilon) {
 			iterationCounter++;
