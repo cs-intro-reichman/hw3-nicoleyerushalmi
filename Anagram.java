@@ -44,15 +44,13 @@ public class Anagram {
 					for(int k = 0; k < new_str1.length(); k++){
 						char c = str2.charAt(j);
 						if ((new_str.indexOf(c) != -1)) {
-							bool = false;
-						}
-					}
+							bool = false;}
+					} // close for last letters
 					new_str = new_str + str1.charAt(i);
-
-					break;
+					new_str1 = new_str1 +str1.charAt(i);
 				} // close if 
 			}// close for j
-			if (new_str != str1) {
+			if (new_str1 != str1) {
 				bool = false;}
 		}// close for i
 		return bool;
