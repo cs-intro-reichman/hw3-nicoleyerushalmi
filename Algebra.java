@@ -26,7 +26,7 @@ public class Algebra {
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
 		// loop too add
-		// number > 0
+		// number > 0 plus
 		int add = 0;
 		if ((x1 > 0) && (x2 > 0)) {
 			add = x2;
@@ -34,21 +34,21 @@ public class Algebra {
 				{add ++;}
 			}
 		
-		// one > 0 and the other < 0
+		// one > 0 and the other < 0 plus
 		if ((x1 > 0) && (x2 < 0)) {
 			add = x2;
 			for(int i = 0; i < x1; i++)
 				{add ++;}
 		}
 
-		// one > 0 and the other < 0
+		// one > 0 and the other < 0 plus
 		if ((x1 < 0) && (x2 > 0)) {
 			add = x1;
 			for(int i = 0; i < x2; i++)
 				{add ++;}
 		}
 
-		// both < 0
+		// both < 0 plus
 		if ((x1 < 0) && (x2 < 0)) {
 			add = x2;
 			for(int i = x1; i < 0; i++)
@@ -60,28 +60,28 @@ public class Algebra {
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		// loop to minus
-		// number > 0
+		// number > 0 minus
 		int minus1 = x1;
 		if ((x1 > 0) && (x2 > 0)) {
 			for(int i = 0; i < x2 ;i++){
 				minus1--;}	
 		}
 
-		// one > 0 and the other < 0
+		// one > 0 and the other < 0 minus
 		if ((x1 > 0) && (x2 < 0)) {
 			minus1 = x1;
 			for(int i = x2; i < 0 ;i++){
 				minus1 ++;}
 		}
 
-		// one > 0 and the other < 0
+		// one > 0 and the other < 0 minus
 		if ((x1 < 0) && (x2 > 0)) {
 			minus1 = x1;
 			for(int i = 0; i < x2 ;i++){
 				minus1 --;}
 		}
 
-		// both < 0
+		// both < 0 minus
 		if ((x1 < 0) && (x2 < 0)) {
 			minus1 = x1;
 			for(int i = x2; i < 0 ;i++){
@@ -98,18 +98,19 @@ public class Algebra {
 		if ((x1 == 0 || x2 == 0)) {
 			return 0;
 		}
-
+		// both > 0 times
 		if ((x1 > 0 && x2 > 0)) {
-			times1 = x1;
+			times1 = x2;
 			for(int i = 0; i < x1 - 1; i++){
 			times1 = plus(x2, times1);}
 		}
 
 		else{
+			// x1 < 0 and x2 > 0 times
 			if ((x1 < 0) && (x2 > 0)) {
-				x1 = minus(0, x1); // positive number
+				//x1 = minus(0, x1); // positive number - new change!
 				times1 = x2;
-				for(int i = 0; i < x1-1; i++){
+				for(int i = x1; i < 0; i++){
 					times1 = plus(times1, x2);}
 				times1 = minus(0, times1); // return to negative
 			}
