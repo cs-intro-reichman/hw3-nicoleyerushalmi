@@ -70,6 +70,7 @@ public class LoanCalc {
 		double last_try = (loan + epsilon) / 2;
 		double small_last_try = epsilon;
 		iterationCounter = 0;
+		endB = endBalance(loan, rate, n, try_payment);
 		while (endB >= epsilon) {
 			iterationCounter++;
 			if (endB < 0) {
