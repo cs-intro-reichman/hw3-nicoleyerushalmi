@@ -124,6 +124,7 @@ public class Algebra {
 			if ( (x2 < 0) && (x1 < 0)) {
 				x1 = minus(0, x1);
 				x2 = minus(0, x2);
+				times1 = x2;
 				for(int i = 0; i < x1 - 1; i++){
 					times1 = plus(x2, times1);}
 			}
@@ -140,9 +141,10 @@ public class Algebra {
 		}
 		int pow1 = x;
 		// number < 0
-		if (pow1 < 0) {
-			pow1 = minus(0, x);
-		}
+		// if (pow1 < 0) {
+		// 	for(int i = 0; i < n -1 ;i++){
+		// 		pow1 = times(pow1, x);
+		//}
 		// number > 0
 		for(int i = 0; i < n -1 ;i++){
 			pow1 = times(pow1, x);
@@ -158,7 +160,7 @@ public class Algebra {
 		if (x1 > 0 && x2 > 0) {
 			if (x2 > x1){return 0;}
 			int divers1 = x2;
-			for(int i =0; divers1 < x1 + 1; i++){
+			for(int i =0; i < x1 + 1; i++){
 				much ++;
 				divers1 = divers1 + x2;}
 			//return much;
@@ -170,7 +172,7 @@ public class Algebra {
 			x2 = times(-1, x2);
 			if (x2 > x1){return 0;}
 			int divers2 = x2;
-			for(int i =0; divers2 < x1 + 1; i++){
+			for(int i =0; i < x1 + 1; i++){
 				much ++;
 				divers2 = divers2 + x2;}
 			//return much;}
