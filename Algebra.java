@@ -38,7 +38,7 @@ public class Algebra {
 		if ((x1 > 0) && (x2 < 0)) {
 			add = x1;
 			for(int i = 0; i < x2; i++)
-				{add --;}
+				{add ++;}
 		}
 
 		// one > 0 and the other < 0
@@ -51,7 +51,7 @@ public class Algebra {
 		// both < 0
 		if ((x1 < 0) && (x2 < 0)) {
 			add = x2;
-			for(int i = 0; i < x1; i++)
+			for(int i = x1; i < 0; i++)
 				{add --;}
 			}
 			return add;
@@ -97,15 +97,34 @@ public class Algebra {
 		}
 
 		if ((x1 > 0 && x2 > 0)) {
+			times1 = x1;
 			for(int i = 0; i < x1 - 1; i++){
 			times1 = plus(x2, times1);}
 		}
 
 		else{
-			for(int i = 0; i < x1 - 1; i++){
-				times1 = plus(x2, times1);}
-			times1 = minus(0, times1);
-		}
+			if ((x1 < 0) && (x2 > 0)) {
+				x1 = minus(0, x1); // positive number
+				times1 = x2;
+				for(int i = 0; i < x1-1; i++){
+					times1 = plus(times1, x2);}
+				times1 = minus(0, times1); // return to negative
+			}
+			if ((x2 < 0) && (x1 > 0)) {
+				x2 = minus(0, x2); // positive number
+				times1 = x1;
+				for(int i = 0; i < x2 - 1; i++){
+					times1 = plus(times1, x1);}
+				times1 = minus(0, times1); // return to negative
+			}
+			if ( (x2 < 0) && (x1 < 0)) {
+				x1 = minus(0, x1);
+				x2 = minus(0, x2);
+				for(int i = 0; i < x1 - 1; i++){
+					times1 = plus(x2, times1);}
+			}
+			
+		} // times1 = minus(0, times1);
 		return times1;
 	}
 
@@ -118,7 +137,7 @@ public class Algebra {
 		int pow1 = x;
 		// number < 0
 		if (pow1 < 0) {
-			pow1 = times(-1, pow1);
+			pow1 = minus(0, x);
 		}
 		// number > 0
 		for(int i = 0; i < n -1 ;i++){
