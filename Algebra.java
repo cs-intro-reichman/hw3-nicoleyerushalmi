@@ -45,7 +45,7 @@ public class Algebra {
 		if ((x1 < 0) && (x2 > 0)) {
 			add = x1;
 			for(int i = 0; i < x2; i++)
-				{add --;}
+				{add ++;}
 		}
 
 		// both < 0
