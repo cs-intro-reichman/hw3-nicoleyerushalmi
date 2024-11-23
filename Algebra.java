@@ -62,20 +62,20 @@ public class Algebra {
 		// loop to minus
 		// number > 0 minus
 		int minus1 = x1;
-		if ((x1 > 0) && (x2 > 0)) {
+		if ((x1 >= 0) && (x2 >= 0)) {
 			for(int i = 0; i < x2 ;i++){
 				minus1--;}	
 		}
 
 		// one > 0 and the other < 0 minus
-		if ((x1 > 0) && (x2 < 0)) {
+		if ((x1 >= 0) && (x2 < 0)) {
 			minus1 = x1;
 			for(int i = x2; i < 0 ;i++){
 				minus1 ++;}
 		}
 
 		// one > 0 and the other < 0 minus
-		if ((x1 < 0) && (x2 > 0)) {
+		if ((x1 < 0) && (x2 >= 0)) {
 			minus1 = x1;
 			for(int i = 0; i < x2 ;i++){
 				minus1 --;}
@@ -108,9 +108,9 @@ public class Algebra {
 		else{
 			// x1 < 0 and x2 > 0 times
 			if ((x1 < 0) && (x2 > 0)) {
-				//x1 = minus(0, x1); // positive number - new change!
+				x1 = minus(0, x1); // positive numcer
 				times1 = x2;
-				for(int i = x1; i < 0; i++){
+				for(int i = 0; i < x1 - 1; i++){
 					times1 = plus(times1, x2);}
 				times1 = minus(0, times1); // return to negative
 			}
