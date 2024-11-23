@@ -12,7 +12,7 @@ public class LoanCalc {
 		double loan = Double.parseDouble(args[0]);
 		double rate = Double.parseDouble(args[1]);
 		int n = Integer.parseInt(args[2]);
-		System.out.println("Loan = " + loan + ", interest rate = " + rate + "%, periods = " + n);
+		System.out.println("Loan = nikki" + loan + ", interest rate = " + rate + "%, periods = " + n);
 
 		// Computes the periodical payment using brute force search
 		System.out.print("\nPeriodical payment, using brute force: ");
@@ -45,8 +45,8 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
 	public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		// Replace the following statement with your code
-		double try_payment = 1;
-		double increment = 0.001;
+		double try_payment = 10;
+		double increment = 0.0001;
 		iterationCounter = 0;
 		double endB = loan;
 		while (endB >= epsilon) {
