@@ -52,7 +52,7 @@ public class Algebra {
 		if ((x1 < 0) && (x2 < 0)) {
 			add = x2;
 			for(int i = x1; i < 0; i++)
-				{add --;}
+				{add ++;}
 			}
 			return add;
 		}
