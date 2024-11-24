@@ -240,10 +240,9 @@ public class Algebra {
 			int new_squrt = 1;
 			for (int i = 0; i < x; i++) {
 				if (times(i, i) == x) {
-					new_squrt = i;
 					if ((times(i, i)) > x) {
-						break;
-					}
+						break;}
+					new_squrt = i;
 				}
 			}
 			return new_squrt;
