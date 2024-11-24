@@ -168,7 +168,7 @@ public class Algebra {
 		// loop for divers
 		// numbers > 0
 		int counter = 1;
-		if (x1 > 0 && x2 > 0) {
+		if (x1 >= 0 && x2 >= 0) {
 			if ((x2 > x1) || (x1 == 0 || x2 == 0)){return 0;}
 			counter = 1;
 			while ((times(counter, x2)) < x1) {
@@ -241,6 +241,9 @@ public class Algebra {
 			for (int i = 0; i < x; i++) {
 				if (times(i, i) == x) {
 					new_squrt = i;
+					if ((times(i, i)) > x) {
+						break;
+					}
 				}
 			}
 			return new_squrt;
