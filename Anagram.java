@@ -1,7 +1,8 @@
 import java.util.Random;
 
+//
 /** Functions for checking if a given string is an anagram. */
-public class Anagram {
+public class Anagram { 
 	public static void main(String args[]) {
 		// Tests the isAnagram function.
 		System.out.println(isAnagram("silent","listen"));  // true
