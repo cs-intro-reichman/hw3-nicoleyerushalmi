@@ -171,7 +171,7 @@ public class Algebra {
 		if (x1 > 0 && x2 > 0) {
 			if (x2 > x1){return 0;}
 			counter = 1;
-			while ((times(counter, x2)) != x1) {
+			while ((times(counter, x2)) < x1) {
 				counter++;
 			}
 			//return i;
@@ -193,7 +193,7 @@ public class Algebra {
 			x2 = times(-1, x2);
 			if (x2 > x1) {return 0;}
 			counter = 1;
-			while ((times(counter, x2)) != x1) {
+			while ((times(counter, x2)) < x1) {
 				counter++;
 			}
 			//return i;
@@ -202,7 +202,7 @@ public class Algebra {
 		if (x1 < 0 && x2 > 0) {
 			x1 = times(x1, -1);
 			if (x2 > x1) {return 0;}
-			while ((times(counter, x2)) != x1) {
+			while ((times(counter, x2)) < x1) {
 				counter++;}
 			counter = times(counter, -1);
 			}
@@ -212,7 +212,7 @@ public class Algebra {
 		if (x1 > 0 && x2 < 0) {
 			x2 = times(-1, x2);
 			if (x2 > x1) {return 0;}
-			while ((times(counter, x2)) != x1) {
+			while ((times(counter, x2)) < x1) {
 				counter++;}
 			counter = times(counter, -1);
 		}
