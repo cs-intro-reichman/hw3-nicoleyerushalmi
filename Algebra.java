@@ -207,7 +207,7 @@ public class Algebra {
 			counter = times(counter, -1);
 			}
 			
-			// return much;
+			// return counter;
 		
 		if (x1 > 0 && x2 < 0) {
 			x2 = times(-1, x2);
