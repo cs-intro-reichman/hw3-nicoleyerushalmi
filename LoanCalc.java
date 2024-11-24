@@ -47,7 +47,7 @@ public class LoanCalc {
 		// Replace the following statement with code
 		double try_payment = loan/n;
 		double increment = 0.001;
-		iterationCounter = 0;
+		iterationCounter = -1;
 		double endB = loan;
 		while (endB >= epsilon) {
 			endB = loan;
