@@ -41,11 +41,11 @@ public class Anagram {
 			for(int j = 0; j < str2.length(); j++){
 				// go throw str2 for each chr at str1
 				if (str1.charAt(i) == str2.charAt(j)) {
-					for(int k = 0; k < new_str1.length(); k++){
-						char c = str2.charAt(j);
-						if ((new_str.indexOf(c) != -1)) {
-							bool = false;}
-					} // close for last letters
+					// for(int k = 0; k < new_str1.length(); k++){
+					// 	char c = str2.charAt(j);
+					// 	if ((new_str.indexOf(c) != -1)) {
+					// 		bool = false;}
+					//} // close for last letters
 					new_str = new_str + str1.charAt(i);
 					new_str1 = new_str1 +str1.charAt(i);
 				} // close if 
