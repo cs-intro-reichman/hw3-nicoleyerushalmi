@@ -1,7 +1,7 @@
 import java.util.Random;
 
 //
-/** Functions for checking if a given string is an anagram. */
+//** Functions for checking if a given string is an anagram. */
 public class Anagram { 
 	public static void main(String args[]) {
 		// Tests the isAnagram function.
@@ -29,31 +29,38 @@ public class Anagram {
 		System.out.println(pass ? "test passed" : "test Failed");
 	}  
 
+
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
 		// Replace the following statement with your code
-		String new_str = "";
-		String new_str1 ="";
-		boolean bool = true;
+		//String new_str = "";
+		//String new_str1 ="";
+		boolean bool = false;
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
+		char [] arr = new char[str1.length()];
+		for (int k = 0; k < str1.length(); k ++){
+			arr[k] = str1.charAt(k);
+		}
 		for(int i = 0; i< str1.length(); i++){
 			//go throw the first string
 			for(int j = 0; j < str2.length(); j++){
-				// go throw str2 for each chr at str1
-				if (str1.charAt(i) == str2.charAt(j)) {
-					// for(int k = 0; k < new_str1.length(); k++){
-					// 	char c = str2.charAt(j);
-					// 	if ((new_str.indexOf(c) != -1)) {
-					// 		bool = false;}
-					//} // close for last letters
-					new_str = new_str + str1.charAt(i);
-					new_str1 = new_str1 +str1.charAt(i);
-				} // close if 
-			}// close for j
-			if (new_str1 != str1) {
-				bool = false;}
-		}// close for i
+				if (str1.charAt(i) == str2.charAt(j)){
+					for (int s = 0; s < arr.length; s ++){
+						if (arr[s] == str1.charAt(i)) {
+							arr [s] = (char)'-';
+						}
+					}
+				}
+
+			}
+		}
+		for(int t = 0; t < arr.length; t++){
+			if (arr[t] != '-') {
+				bool = false;
+				break;
+			}else {bool = true;}
+		}	
 		return bool;
 	}
 	   
@@ -82,18 +89,7 @@ public class Anagram {
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
 		// Replace the following statement with your code
-		String new_str = "";
-		str = preProcess(str);
-		Random random = new Random();
-		while (new_str.length() != str.length()) {
-			char randomchar = (char)(random.nextInt(97, 122));
-			for(int i=0; i< str.length(); i++){
-				if ((str.charAt(i) == randomchar)) {
-					new_str = new_str + str.charAt(i);}
-			}// close for i
-		}// close while
-		return new_str;
+		return "0";
 	}
-		
-	}
+}
 
