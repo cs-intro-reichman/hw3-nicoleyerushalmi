@@ -33,7 +33,7 @@ public class Anagram {
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
 		// Replace the following statement with your code
-		//String new_str = "";
+		//String new_str = "";\
 		//String new_str1 ="";
 		boolean bool = false;
 		str1 = preProcess(str1);
