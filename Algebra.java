@@ -173,7 +173,7 @@ public class Algebra {
 			counter = 1;
 			while ((times(counter, x2)) < x1) {
 				counter++;
-				if ((times(counter, x2) + x2) > x1) {
+				if ((plus(times(counter, x2), x2)) > x1) {
 					break;
 				}
 			}
