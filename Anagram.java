@@ -89,7 +89,19 @@ public class Anagram {
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
 		// Replace the following statement with your code
-		return "0";
+		str = preProcess(str);
+		String new_str = "";
+		char [] arr = new char[str.length()];
+		for (int k = 0; k < str.length(); k ++){
+			arr[k] = str.charAt(k);}
+			for(int i = 0; i < str.length(); i++){
+				int random_Index = (int) Math.random() * arr.length;
+				new_str = new_str + arr[random_Index];
+				}
+				return new_str;
+			}
+			
+		
 	}
-}
+
 
