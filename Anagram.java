@@ -91,17 +91,33 @@ public class Anagram {
 		// Replace the following statement with your code
 		str = preProcess(str);
 		String new_str = "";
+		char [] new_arr = new char[str.length()*2];
+		int t = 0;
+		boolean bool = false;
 		char [] arr = new char[str.length()];
 		for (int k = 0; k < str.length(); k ++){
-			arr[k] = str.charAt(k);}
-			for(int i = 0; i < str.length(); i++){
-				int random_Index = (int) Math.random() * arr.length;
-				new_str = new_str + arr[random_Index];
+			arr[k] = str.charAt(k);} // string into array
+			while (t < str.length()) {
+				bool = false;
+				int random_Index = (int) (Math.random() * str.length());
+				for (int s = 0; s < new_arr.length -1; s++ ){ // chek the new array if the letter is avillable
+					if(arr[random_Index] != new_arr[s]){
+						new_arr[t] = arr[random_Index];
+						bool = true;
+						t ++;
+						break;
+					}
+					}
+					if ((bool == true)) {
+						new_str = new_str + arr[random_Index];
+					}
 				}
 				return new_str;
+			} 
+				
 			}
 			
 		
-	}
+
 
 
